@@ -1,0 +1,19 @@
+{
+  "name": "zen/payment-core",
+  "description": "Payment core library, contains basic functions to implement Payment Method",
+  "type": "library",
+  "version": "2.0.1",
+  "require": {
+    "justinrainbow/json-schema": "^5.2",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "php": ">=5.4.0"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Zen\\Payment\\": "src",
+      "Zen\\Payment\\Helper\\": "src/Helpers"
+    }
+  }
+}
