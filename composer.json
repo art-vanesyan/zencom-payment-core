@@ -1,5 +1,5 @@
 {
-  "name": "zen/payment-core",
+  "name": "art-vanesyan/zencom-payment-core",
   "description": "Payment core library, contains basic functions to implement Payment Method",
   "type": "library",
   "version": "2.0.1",
