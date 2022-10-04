@@ -34,7 +34,7 @@ class Paywall
         $amount, $currency, $orderId, $customerFirstName, $customerLastName,
         $customerEmail, $urlSuccess, $urlFailure, $urlReturn, $urlIpn, $items,
         $terminalId, $paywallSecret,
-        $pluginName, $pluginVersion, $platformName, $platformVersion
+        $pluginName = null, $pluginVersion = null, $platformName = null, $platformVersion = null
     )
     {
         $data = [];
@@ -58,10 +58,18 @@ class Paywall
         }
 
         $data['merchantTransactionId'] = $orderId . '#' . uniqid();
-        $data['sourceAdditionalData']['platformName'] = $platformName;
-        $data['sourceAdditionalData']['platformVersion'] = $platformVersion;
-        $data['sourceAdditionalData']['pluginName'] = $pluginName;
-        $data['sourceAdditionalData']['pluginVersion'] = $pluginVersion;
+        if($platformName) {
+            $data['sourceAdditionalData']['platformName'] = $platformName;
+        }
+        if($platformVersion) {
+            $data['sourceAdditionalData']['platformVersion'] = $platformVersion;
+        }
+        if($pluginName) {
+            $data['sourceAdditionalData']['pluginName'] = $pluginName;
+        }
+        if($pluginVersion){
+            $data['sourceAdditionalData']['pluginVersion'] = $pluginVersion;
+        }
         $data['terminalUuid'] = trim($terminalId);
         $data['urlFailure'] = $urlFailure;
         $data['urlRedirect'] = $urlReturn;
